@@ -3,16 +3,9 @@ defmodule Earth do
   Documentation for `Earth`.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Earth.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def start() do
+    Node.start(:earth)
+    cookie = Application.get_env(:earth, :cookie)
+    Node.set_cookie(:"#{cookie}")
   end
 end
