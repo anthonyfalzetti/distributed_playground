@@ -9,7 +9,7 @@ defmodule Moon.Application do
 
     children = [
       {Cluster.Supervisor, [topologies, [name: Zetty.ClusterSupervisor]]},
-      {Moon.Relay, []}
+      {Moon.LoggingMocker, []}
     ]
 
     opts = [strategy: :one_for_one, name: Moon.Supervisor]

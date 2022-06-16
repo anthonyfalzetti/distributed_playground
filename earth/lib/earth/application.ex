@@ -5,12 +5,12 @@ defmodule Earth.Application do
 
   @impl true
   def start(_type, _args) do
-    Earth.start()
     topologies = Application.get_env(:libcluster, :topologies)
 
     children = [
       {Cluster.Supervisor, [topologies, [name: Zetty.ClusterSupervisor]]},
-      {Earth.Relay, []}
+      {Eavesdropper.Receiver, []},
+      {Eavesdropper.LogForwarder, []}
     ]
 
     opts = [strategy: :one_for_one, name: Earth.Supervisor]

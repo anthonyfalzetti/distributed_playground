@@ -2,14 +2,14 @@ import Config
 
 config :libcluster,
   topologies: [
-    gossip_example: [
-      strategy: Elixir.Cluster.Strategy.Gossip,
-      config: [
-        port: 45892,
-        if_addr: "0.0.0.0",
-        multicast_addr: "255.255.0.0"
-      ]
+    zetty_solar_system: [
+      strategy: Elixir.Cluster.Strategy.Gossip
     ]
   ]
 
 config :earth, cookie: "zetty"
+
+config :eavesdropper,
+  receiving_node: "earth@127.0.0.1",
+  min_level: :error,
+  truncate: 4096

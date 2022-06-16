@@ -22,7 +22,8 @@ defmodule Earth.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:libcluster, "~> 3.3"}
+      {:libcluster, "~> 3.3"},
+      {:eavesdropper, github: "anthonyfalzetti/eavesdropper"}
     ]
   end
 end

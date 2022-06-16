@@ -1,0 +1,1 @@
+iex --cookie zetty --name moon@127.0.0.1 -S mix
